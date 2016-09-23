@@ -4,6 +4,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.TextView;
 
 import com.mvptest.view.ScrollListview;
 
@@ -11,6 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.Bind;
+import butterknife.ButterKnife;
 
 /**
  * Created by Administrator on 2016/9/23.
@@ -59,11 +61,32 @@ public class ScrollTestActivity extends BaseActivity {
 
             @Override
             public View getView(int position, View convertView, ViewGroup parent) {
-                LayoutInflater.from(ScrollTestActivity.this).inflate(R.layout.item,null);
+                ViewHolder viewHolder;
+                if (convertView == null){
+                    convertView = LayoutInflater.from(ScrollTestActivity.this).inflate(R.layout.item, null);
+                    viewHolder = new ViewHolder(convertView);
+                    convertView.setTag(viewHolder);
+                }else {
+                    viewHolder = (ViewHolder) convertView.getTag();
+                }
+                viewHolder.content.setText(data.get(position));
 
-                return null;
+                return convertView;
             }
+
+            class ViewHolder{
+                @Bind(R.id.content)
+                TextView content;
+                ViewHolder(View view) {
+                    ButterKnife.bind(this, view);
+                }
+            }
+
         });
+
+
+
+
 
     }
 
