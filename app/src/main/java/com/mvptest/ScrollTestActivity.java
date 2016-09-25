@@ -4,6 +4,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.mvptest.view.ScrollListview;
@@ -12,7 +13,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.Bind;
-import butterknife.ButterKnife;
 
 /**
  * Created by Administrator on 2016/9/23.
@@ -36,8 +36,20 @@ public class ScrollTestActivity extends BaseActivity {
         data.add("B");
         data.add("C");
         data.add("D");
-        data.add("E");
-        data.add("F");
+//        data.add("E");
+//        data.add("F");
+//        data.add("A");
+//        data.add("B");
+//        data.add("C");
+//        data.add("D");
+//        data.add("E");
+//        data.add("F");
+//        data.add("A");
+//        data.add("B");
+//        data.add("C");
+//        data.add("D");
+//        data.add("E");
+//        data.add("F");
     }
 
     @Override
@@ -74,19 +86,21 @@ public class ScrollTestActivity extends BaseActivity {
                 return convertView;
             }
 
+
             class ViewHolder{
-                @Bind(R.id.content)
                 TextView content;
                 ViewHolder(View view) {
-                    ButterKnife.bind(this, view);
+                    content = (TextView) view.findViewById(R.id.content);
                 }
             }
 
         });
 
 
-
-
+        View header =  LayoutInflater.from(ScrollTestActivity.this).inflate(R.layout.header, null);
+        ImageView imageView = (ImageView) header.findViewById(R.id.img);
+        list.addHeaderView(header);
+        list.setEnlargeImageView(imageView);
 
     }
 
