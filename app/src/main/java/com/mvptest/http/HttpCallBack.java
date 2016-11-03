@@ -5,11 +5,11 @@ package com.mvptest.http;
  */
 
 public interface HttpCallBack<T> {
-    void onStart();
+    void onHttpStart();
 
-    void onSuccess(T model);
+    void onHttpSuccess(T model);
 
-    void onFailure(int code, String msg);
+    void onHttpFailure(int code, String msg);
 
-    void onCompleted();
+    void onHttpCompleted();
 }

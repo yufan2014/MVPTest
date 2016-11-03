@@ -1,4 +1,4 @@
-package com.mvptest;
+package com.mvptest.ui;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -7,6 +7,8 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.mvptest.R;
+import com.mvptest.ui.base.BaseActivity;
 import com.mvptest.view.ScrollListview;
 
 import java.util.ArrayList;
@@ -86,21 +88,21 @@ public class ScrollTestActivity extends BaseActivity {
                 return convertView;
             }
 
-
             class ViewHolder{
                 TextView content;
                 ViewHolder(View view) {
                     content = (TextView) view.findViewById(R.id.content);
                 }
             }
-
         });
 
 
         View header =  LayoutInflater.from(ScrollTestActivity.this).inflate(R.layout.header, null);
         ImageView imageView = (ImageView) header.findViewById(R.id.img);
+        ImageView ratation_icon = (ImageView) header.findViewById(R.id.ratation_icon);
         list.addHeaderView(header);
         list.setEnlargeImageView(imageView);
+        list.setHeaderImageView(ratation_icon);
 
     }
 

@@ -22,12 +22,12 @@ public class SubscriberCallBack<T> extends Subscriber<T> {
     @Override
     public void onStart() {
         super.onStart();
-        callBack.onStart();
+        callBack.onHttpStart();
     }
 
     @Override
     public void onCompleted() {
-        callBack.onCompleted();
+        callBack.onHttpCompleted();
     }
 
     @Override
@@ -38,11 +38,11 @@ public class SubscriberCallBack<T> extends Subscriber<T> {
             //httpException.response().errorBody().string()
             int code = httpException.code();
             String msg = httpException.getMessage();
-            callBack.onFailure(code, msg);
+            callBack.onHttpFailure(code, msg);
         } else {
-            callBack.onFailure(0, e.getMessage());
+            callBack.onHttpFailure(0, e.getMessage());
         }
-        callBack.onCompleted();
+        callBack.onHttpCompleted();
     }
 
     @Override
@@ -50,12 +50,12 @@ public class SubscriberCallBack<T> extends Subscriber<T> {
         if(t instanceof BaseBean) {
             BaseBean bean = (BaseBean) t;
             if (bean.code == HttpSetting.CODE_SUCCESS) {
-                callBack.onSuccess(t);
+                callBack.onHttpSuccess(t);
             } else {
-                callBack.onFailure(bean.code, bean.msg);
+                callBack.onHttpFailure(bean.code, bean.msg);
             }
         }else if(t instanceof String){
-            callBack.onSuccess(t.toString().trim());
+            callBack.onHttpSuccess(t.toString().trim());
         }
     }
 }

@@ -10,7 +10,7 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme" >
-        <activity android:name=".MainActivity" >
+        <activity android:name=".ui.LoginActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -18,7 +18,8 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".ScrollTestActivity"/>
+        <activity android:name=".ui.ScrollTestActivity"/>
+        <!--<activity android:name=".ui.LoginActivity"/>-->
     </application>
 
 </manifest>

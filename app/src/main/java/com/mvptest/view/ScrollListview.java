@@ -20,6 +20,7 @@ public class ScrollListview extends ListView {
 
     private ImageView imageView;
     private int imageViewHeight = 0;
+    private ImageView headerImageView;
 
     public ScrollListview(Context context) {
         super(context);
@@ -49,13 +50,15 @@ public class ScrollListview extends ListView {
         Log.i("scrollY","===================="+scrollY);
 
         if(deltaY<0){
-            if (imageView != null) {
+            if (imageView != null && headerImageView != null) {
                 imageView.getLayoutParams().height = imageView.getHeight() - deltaY;
+                headerImageView.setRotation(headerImageView.getRotation() - deltaY);
                 imageView.requestLayout();
             }
         }else{
             if (imageView.getHeight()>imageViewHeight && imageView != null) {
                 imageView.getLayoutParams().height = imageView.getHeight() - deltaY;
+                headerImageView.setRotation(headerImageView.getRotation() - deltaY);
                 imageView.requestLayout();
             }
         }
@@ -78,8 +81,6 @@ public class ScrollListview extends ListView {
             imageView.getLayoutParams().height = imageView.getHeight() + top;
             imageView.requestLayout();
         }
-
-
         super.onScrollChanged(l, t, oldl, oldt);
     }
 
@@ -98,7 +99,9 @@ public class ScrollListview extends ListView {
         return super.onTouchEvent(ev);
     }
 
-
+    public void setHeaderImageView(ImageView headerImageView) {
+        this.headerImageView = headerImageView;
+    }
 
 
     class ResetAnimation extends Animation{
