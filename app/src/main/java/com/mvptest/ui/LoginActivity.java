@@ -10,7 +10,6 @@ import com.mvptest.R;
 import com.mvptest.bean.IndexContents;
 import com.mvptest.ui.base.BaseMVPActivity;
 import com.mvptest.ui.mvp.presenter.LoginPresenter;
-import com.mvptest.ui.mvp.view.BaseView;
 import com.mvptest.ui.mvp.view.LoginView;
 
 import butterknife.Bind;
@@ -19,7 +18,7 @@ import butterknife.Bind;
  * Created by Administrator on 2016/11/2.
  */
 
-public class LoginActivity extends BaseMVPActivity<LoginView, LoginPresenter> implements BaseView {
+public class LoginActivity extends BaseMVPActivity<LoginView, LoginPresenter> implements LoginView {
     @Bind(R.id.username)
     EditText username;
     @Bind(R.id.pwd)

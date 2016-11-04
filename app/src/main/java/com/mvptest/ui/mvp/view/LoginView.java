@@ -6,4 +6,5 @@ package com.mvptest.ui.mvp.view;
 
 public interface LoginView extends BaseView {
 
+
 }
