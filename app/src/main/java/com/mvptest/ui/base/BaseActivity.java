@@ -6,7 +6,6 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 
 import butterknife.ButterKnife;
-import rx.subscriptions.CompositeSubscription;
 
 /**
  * Created by Administrator on 2016/8/18.
@@ -14,7 +13,6 @@ import rx.subscriptions.CompositeSubscription;
 
 public abstract class BaseActivity extends AppCompatActivity {
 
-    private CompositeSubscription mCompositeSubscription;
     private ProgressDialog progressBar;
 
 
@@ -69,8 +67,6 @@ public abstract class BaseActivity extends AppCompatActivity {
 
     /**
      * 获取网络数据
-     * @param observable
-     * @param httpCallBack
      */
 //    public void getHttp(Observable observable,HttpCallBack httpCallBack){
 //        addSubscription(observable,httpCallBack);

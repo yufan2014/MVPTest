@@ -1,7 +1,6 @@
 package com.mvptest.http;
 
 import com.mvptest.bean.BaseBean;
-import com.mvptest.config.HttpSetting;
 
 import retrofit2.adapter.rxjava.HttpException;
 import rx.Subscriber;
