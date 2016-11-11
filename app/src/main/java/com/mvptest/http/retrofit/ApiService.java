@@ -1,6 +1,7 @@
 package com.mvptest.http.retrofit;
 
 import com.mvptest.bean.IndexContents;
+import com.mvptest.bean.UpdateAppInfo;
 
 import retrofit2.http.GET;
 import retrofit2.http.Query;
@@ -17,4 +18,6 @@ public interface ApiService {
     @GET("http://test-server.zdoer.net/IndexInfo/getIndexContent")
     Observable<IndexContents> getIndex();
 
+    @GET("http://test-server.zdoer.net/IndexInfo/getIndexContent")
+    Observable<UpdateAppInfo> checkVersion();
 }

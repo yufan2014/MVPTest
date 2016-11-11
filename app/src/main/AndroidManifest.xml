@@ -20,6 +20,7 @@
 
         <activity android:name=".ui.ScrollTestActivity"/>
         <!--<activity android:name=".ui.LoginActivity"/>-->
+        <service android:name=".http.version_update.DownLoadService"/>
     </application>
 
 </manifest>
