@@ -1,5 +1,7 @@
 package com.mvptest.bean;
 
+import com.frame.bean.BaseBean;
+
 import java.io.Serializable;
 import java.util.List;
 

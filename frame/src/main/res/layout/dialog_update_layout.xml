@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="240dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape_gray_border_circle"
+        android:paddingTop="10dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/seting_aboutus_logo"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="发现新版本"
+            android:textSize="15sp"
+            android:textColor="#000000"/>
+        <TextView
+            android:id="@+id/version_size"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:lineSpacingExtra="2dp"
+            android:textSize="13sp"
+            android:textColor="#cc333333"
+            android:text="最新版本：1.0.8\n新版本大小：10.49M \n仅需下载：3.80M"
+            />
+
+        <TextView
+            android:id="@+id/version_update_desc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:lineSpacingExtra="2dp"
+            android:textSize="13sp"
+            android:text="更新内容：\n1.搜索功能优化\n——更全面的搜索结果展示页，更多样的搜索结果排序方式，让你更快找到想要的。\n2.简友动态继续升级\n——更详细的展示方式，跟好友一起发现最优的又去的内容。\n3.修复编辑器的bug，优化用户体验。"
+            android:textColor="#cc333333"/>
+
+
+        <CheckBox
+            android:id="@+id/ignore_update"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="10sp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:textColor="#cc333333"
+            android:text="忽略此版本"/>
+        
+        
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_height="40dp">
+            
+            <TextView
+                android:id="@+id/go_update"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:background="@drawable/button_shape_left_list"
+                android:textColor="#8A000000"
+                android:layout_height="match_parent"
+                android:textSize="12sp"
+                android:text="立即更新"/>
+
+            <TextView
+                android:id="@+id/close_update"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:textSize="12sp"
+                android:textColor="#8A000000"
+                android:background="@drawable/button_shape_right_list"
+                android:layout_height="match_parent"
+                android:text="以后再说"/>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</LinearLayout>
