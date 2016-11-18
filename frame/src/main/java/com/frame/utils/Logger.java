@@ -1,6 +1,6 @@
 package com.frame.utils;
 
-import android.support.graphics.drawable.BuildConfig;
+import android.support.v7.appcompat.BuildConfig;
 import android.util.Log;
 
 import java.util.Hashtable;

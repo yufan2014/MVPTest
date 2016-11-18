@@ -7,8 +7,8 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.frame.base.BaseActivity;
 import com.mvptest.R;
-import com.mvptest.ui.base.BaseActivity;
 import com.mvptest.view.ScrollListview;
 
 import java.util.ArrayList;

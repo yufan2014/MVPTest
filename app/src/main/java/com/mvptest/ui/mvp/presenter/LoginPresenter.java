@@ -1,7 +1,8 @@
 package com.mvptest.ui.mvp.presenter;
 
+import com.frame.http.HttpCallBack;
+import com.frame.mvp.BasePresenter;
 import com.mvptest.bean.IndexContents;
-import com.mvptest.http.HttpCallBack;
 import com.mvptest.ui.mvp.model.LoginModel;
 import com.mvptest.ui.mvp.view.LoginView;
 

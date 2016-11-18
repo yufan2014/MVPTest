@@ -2,8 +2,8 @@ package com.mvptest.ui;
 
 import android.widget.TextView;
 
+import com.frame.base.BaseActivity;
 import com.mvptest.R;
-import com.mvptest.ui.base.BaseActivity;
 
 import butterknife.Bind;
 

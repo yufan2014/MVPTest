@@ -4,11 +4,10 @@ import android.app.ProgressDialog;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
 
+import com.frame.base.BaseMVPActivity;
 import com.mvptest.R;
 import com.mvptest.bean.IndexContents;
-import com.mvptest.ui.base.BaseMVPActivity;
 import com.mvptest.ui.mvp.presenter.LoginPresenter;
 import com.mvptest.ui.mvp.view.LoginView;
 
@@ -19,6 +18,7 @@ import butterknife.Bind;
  */
 
 public class LoginActivity extends BaseMVPActivity<LoginView, LoginPresenter> implements LoginView {
+
     @Bind(R.id.username)
     EditText username;
     @Bind(R.id.pwd)
@@ -61,7 +61,6 @@ public class LoginActivity extends BaseMVPActivity<LoginView, LoginPresenter> im
     public void onHttpSuccess(Object model) {
         if(model instanceof IndexContents){
             IndexContents info = (IndexContents) model;
-            Toast.makeText(this, ""+info.getTitles().get(0).getName(), Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -72,7 +71,7 @@ public class LoginActivity extends BaseMVPActivity<LoginView, LoginPresenter> im
 
     @Override
     public void onHttpFailure(int code, String msg) {
-        Toast.makeText(this, ""+msg, Toast.LENGTH_SHORT).show();
+
     }
 
     @Override
